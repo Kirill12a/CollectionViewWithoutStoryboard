@@ -46,12 +46,15 @@ class ViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
 
         // Layout constraints for `collectionView`
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
-        ])
+        collectionView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(0)
+        }
+//        NSLayoutConstraint.activate([
+//            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+//            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+//            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
+//        ])
     }
 
     private func populateProfiles() {
