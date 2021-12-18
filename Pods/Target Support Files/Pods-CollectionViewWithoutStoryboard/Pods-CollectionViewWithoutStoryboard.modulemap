@@ -1,0 +1,6 @@
+framework module Pods_CollectionViewWithoutStoryboard {
+  umbrella header "Pods-CollectionViewWithoutStoryboard-umbrella.h"
+
+  export *
+  module * { export * }
+}
