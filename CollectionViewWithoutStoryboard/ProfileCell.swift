@@ -60,6 +60,7 @@ final class ProfileCell: UICollectionViewCell {
     }
 
     private func setupViews() {
+        
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = Constants.contentViewCornerRadius
         contentView.backgroundColor = .white
@@ -68,6 +69,8 @@ final class ProfileCell: UICollectionViewCell {
         contentView.addSubview(name)
         contentView.addSubview(locationLabel)
         contentView.addSubview(professionLabel)
+        
+        contentView.layer.cornerRadius = 30 // закругление ячейки
     }
 
     private func setupLayouts() {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
 
@@ -15,13 +16,13 @@ class ViewController: UIViewController {
     private let collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .brown
         return collectionView
     }()
 
     private enum LayoutConstant {
-        static let spacing: CGFloat = 16.0
-        static let itemHeight: CGFloat = 20 // высота ячеек
+        static let spacing: CGFloat = 20.0 // отступы между ячейки
+        static let itemHeight: CGFloat =  270// высота ячеек
     }
 
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
         populateProfiles()
         collectionView.reloadData()
     }
-
+ //MARK:  Delegat ProfileCell
     private func setupViews() {
         view.backgroundColor = .brown // был белый, для проверки поставил борун
         view.addSubview(collectionView)
@@ -56,15 +57,15 @@ class ViewController: UIViewController {
     private func populateProfiles() {
         profiles = [
             Profile(name: "Thor", location: "Boston", imageName: "face", profession: "astronomy"),
-            Profile(name: "Mike", location: "Albequerque", imageName: "face", profession: "basketball"),
+            Profile(name: "Mike", location: "Albequerque", imageName: "dog", profession: "basketball"),
             Profile(name: "Walter White", location: "New Mexico", imageName: "face", profession: "chemistry"),
-            Profile(name: "Sam Brothers", location: "California", imageName: "face", profession: "geography"),
+            Profile(name: "Sam Brothers", location: "California", imageName: "dog", profession: "geography"),
             Profile(name: "Chopin", location: "Norway", imageName: "face", profession: "geometry"),
-            Profile(name: "Castles", location: "UK", imageName: "face", profession: "history"),
+            Profile(name: "Castles", location: "UK", imageName: "dog", profession: "history"),
             Profile(name: "Dr. Johnson", location: "Australia", imageName: "face", profession: "microscope"),
-            Profile(name: "Tom Hanks", location: "Bel Air", imageName: "face", profession: "theater"),
+            Profile(name: "Tom Hanks", location: "Bel Air", imageName: "dog", profession: "theater"),
             Profile(name: "Roger Federer", location: "Switzerland", imageName: "face", profession: "trophy"),
-            Profile(name: "Elon Musk", location: "San Francisco", imageName: "face", profession: "graduate")
+            Profile(name: "Elon Musk", location: "San Francisco", imageName: "dog", profession: "graduate")
         ]
     }
 
@@ -81,6 +82,7 @@ extension ViewController: UICollectionViewDataSource {
 
         let profile = profiles[indexPath.row]
         cell.setup(with: profile)
+        
         cell.contentView.backgroundColor = .red
         return cell
     }
