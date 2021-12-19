@@ -49,6 +49,15 @@ class ViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.top.left.right.bottom.equalTo(0)
         }
+        
+        
+        //это передвинул и все робит
+//        collectionView.snp.makeConstraints { make in
+//            make.top.equalToSuperview().inset(150)
+//            make.left.right.bottom.equalTo(0)
+//        }
+        
+        
 //        NSLayoutConstraint.activate([
 //            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
 //            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
